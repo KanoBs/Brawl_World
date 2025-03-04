@@ -1,0 +1,52 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #222;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header bleibt oben fixiert */
+header {
+    background-color: #ffcc00;
+    padding: 10px;
+    font-size: 24px;
+    position: fixed; /* Fixiert den Header */
+    top: 0; /* Setzt ihn ganz nach oben */
+    width: 100%; /* Nimmt die ganze Breite ein */
+    z-index: 1000; /* Stellt sicher, dass er über allem liegt */
+}
+
+/* Navigation (Buttons) bleibt unten fixiert */
+nav {
+    position: fixed; /* Fixiert die Navigation */
+    bottom: 0; /* Setzt sie ganz nach unten */
+    width: 100%; /* Nimmt die ganze Breite ein */
+    background-color: rgba(0, 0, 0, 0.8); /* Dunkler Hintergrund mit leichter Transparenz */
+    padding: 10px 0;
+    z-index: 1000; /* Stellt sicher, dass sie über allem liegt */
+}
+
+/* Stil für die Buttons */
+button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+/* Platz für den fixierten Header */
+main {
+    margin-top: 70px; /* Verhindert, dass der Inhalt hinter dem Header verschwindet */
+    padding-bottom: 60px; /* Verhindert, dass der Inhalt hinter der fixierten Navigation verschwindet */
+}

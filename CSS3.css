@@ -1,0 +1,48 @@
+/* Style für den Button */
+.dropbtn {
+  background-color: #4CAF50; /* Grüner Hintergrund */
+  color: white; /* Weiße Schriftfarbe */
+  padding: 16px; /* Innenabstand */
+  font-size: 16px; /* Schriftgröße */
+  border: none; /* Kein Rand */
+  cursor: pointer; /* Mauszeiger wird zur Hand */
+}
+
+/* Container für das Dropdown */
+.dropdown {
+  position: relative; /* Wichtig für das Dropdown */
+  display: inline-block; /* Zeigt das Menü nebeneinander */
+}
+
+/* Das Dropdown-Content verstecken, wenn nicht aktiv */
+.dropdown-content {
+  display: none; /* Anfangs versteckt */
+  position: absolute; /* Positioniert das Menü relativ zum Container */
+  background-color: #f9f9f9; /* Heller Hintergrund */
+  min-width: 160px; /* Mindestbreite */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Schatten */
+  z-index: 1; /* Stellt sicher, dass das Menü oben bleibt */
+}
+
+/* Style für die Links im Dropdown */
+.dropdown-content a {
+  color: black; /* Schwarze Schriftfarbe */
+  padding: 12px 16px; /* Innenabstand */
+  text-decoration: none; /* Entfernt Unterstreichung */
+  display: block; /* Links untereinander anordnen */
+}
+
+/* Effekt, wenn man mit der Maus über einen Link fährt */
+.dropdown-content a:hover {
+  background-color: #ddd; /* Hellerer Hintergrund beim Hover */
+}
+
+/* Zeigt das Dropdown-Menü an, wenn der Benutzer mit der Maus über das Container fährt */
+.dropdown:hover .dropdown-content {
+  display: block; /* Zeigt das Menü an */
+}
+
+/* Button-Farbe ändern, wenn der Benutzer mit der Maus darüber fährt */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41; /* Dunkleres Grün */
+}

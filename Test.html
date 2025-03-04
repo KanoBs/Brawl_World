@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esport</title>
+    <link rel="stylesheet" href="CSS2.css">
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
+<body>
+    <header>
+      
+        <h1>Esport</h1>
+    </header>
+
+    <nav>
+        <button onclick="location.href='index.html'">Startseite</button>
+        <button onclick="location.href='brawler.html'">Brawler</button>
+        <button onclick="location.href='modi.html'">Spielmodi</button>
+        <button onclick="location.href='https://supercell.com/'" target="_blank">Supercell</button>
+    </nav>
+
+    <main>
+        
+
+        <!-- Countdown für Turnier -->
+        <section>
+            <h2>Das nächste Esport-Turnier beginnt in:</h2>
+            <div id="countdown"></div>
+        </section>
+
+        <script>
+            const countdownDate = new Date("Mar 10, 2025 18:00:00").getTime();
+
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "TURNIER BEGONNEN!";
+                }
+            }, 1000);
+        </script>
+
+        <!-- Esport Quiz -->
+        <section>
+            <h2>Quiz: Wer ist der beste Brawler?</h2>
+            <form id="quiz">
+                <label for="question1">Wer ist der beste Brawler?</label><br>
+                <input type="radio" name="brawler" value="leon"> Leon<br>
+                <input type="radio" name="brawler" value="rosa"> Rosa<br>
+                <input type="radio" name="brawler" value="shelly"> Shelly<br>
+                <button type="submit">Absenden</button>
+            </form>
+        </section>
+		<!-- Ergebnis Anzeige -->
+        <section id="results" style="display: one;">
+            <h2>Abstimmungsergebnisse</h2>
+            <div id="results-container">
+                <p id="leon-result">León: 0%</p>
+                <p id="rosa-result">Rosa: 0%</p>
+                <p id="shelly-result">Shelly: 0%</p>
+            </div>
+        </section>
+		</main>
+		
+		<footer>
+		<p>&copy; 2025 Esport-Quiz</p>
+		</footer>
+		<script>
+        // Hier speichern wir die Abstimmungsergebnisse
+        let votes = {
+            "Leon": 0,
+            "Rosa": 0,
+            "Shelly": 0
+        };
+
+        let totalVotes = 0;
+
+        // Funktion zum Verarbeiten der Abstimmung
+        document.getElementById("quiz").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const selectedAnswer = document.querySelector('input[name="brawler"]:checked');
+            
+            if (selectedAnswer) {
+                const answer = selectedAnswer.value;
+
+                // Zähler für die gewählte Antwort erhöhen
+                votes[answer]++;
+                totalVotes++;
+
+                // Ergebnisse aktualisieren
+                updateResults();
+            } else {
+                alert("Bitte wähle eine Antwort aus.");
+            }
+        });
+
+        // Funktion zum Aktualisieren der Ergebnisse und der Prozentsätze
+        function updateResults() {
+            // Berechnen der Prozentsätze
+            let leonPercentage = ((votes["Leon"] / totalVotes) * 100).toFixed(1);
+            let rosaPercentage = ((votes["Rosa"] / totalVotes) * 100).toFixed(1);
+            let shellyPercentage = ((votes["Shelly"] / totalVotes) * 100).toFixed(1);
+
+            // Anzeige der Prozentsätze
+            document.getElementById("leon-result").innerText = Leon: ${leonPercentage}%;
+            document.getElementById("rosa-result").innerText = Rosa: ${rosaPercentage}%;
+            document.getElementById("shelly-result").innerText = Shelly: ${shellyPercentage}%;
+
+            // Die Ergebnisse anzeigen
+            document.getElementById("results").style.display = "allowed";
+        }
+    </script>
+
+        
+
+
+        <script>
+            document.getElementById("quiz").addEventListener("submit", function(event) {
+                event.preventDefault();
+                const answer = document.querySelector('input[name="brawler"]:checked');
+                if (answer) {
+                    alert('Du hast ' + answer.value + ' gewählt!');
+                }
+            });
+        </script>
+
+        <!-- Twitter Timeline -->
+        <section>
+            <h2>Verfolgt meine Karrie auf...</h2>
+            <a class="tiktok-timeline" href="https://www.tiktok.com/@kanobs1" data-widget-id="xxx">Tiktoks von @KanoBs</a>
+			<p></p>
+			<a class="Youtube-timeline" href="https://youtube.com/@tse-sports-z4n?si=MoYKCv04tyBjcBdW" data-widget-id="xxx">YouTube Videos von Thunderstorm Esport</a>
+            <p></p>
+			<a class="Twitch-timeline" href="https://www.twitch.tv/kanobs1717?sr=a" data-widget-id="xxx">Live Streams von KanoBs</a>
+        </section>
+
+    <footer>
+        <p>&copy; 2025 Brawl_World.de</p>
+    </footer>
+</body>
+</html>

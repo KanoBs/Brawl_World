@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Brawler</title>
+    
+</head>
+<style>body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #222;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header bleibt oben fixiert */
+header {
+    background-color: #ffcc00;
+    padding: 5px;
+    font-size: 20px;
+    position: fixed; /* Fixiert den Header */
+    top: 0; /* Setzt ihn ganz nach oben */
+    width: 100%; /* Nimmt die ganze Breite ein */
+    z-index: 1000; /* Stellt sicher, dass er über allem liegt */
+}
+
+/* Navigation (Buttons) bleibt unten fixiert */
+nav {
+    position: fixed; /* Fixiert die Navigation */
+    bottom: 0; /* Setzt sie ganz nach unten */
+    width: 100%; /* Nimmt die ganze Breite ein */
+    background-color: rgba(0, 0, 0, 0.8); /* Dunkler Hintergrund mit leichter Transparenz */
+    padding: 10px 0;
+    z-index: 1000; /* Stellt sicher, dass sie über allem liegt */
+    display: flex;
+    justify-content: center; /* Zentriert die Buttons */
+    gap: 10px; /* Abstand zwischen den Buttons */
+}
+
+/* Stil für die Buttons */
+button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+/* Dropdown-Button und Inhalt */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none; /* Anfangs unsichtbar */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Dropdown sichtbar machen, wenn über das Dropdown fährt */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #e64a19;
+}
+
+/* Platz für den fixierten Header */
+main {
+    margin-top: 70px; /* Verhindert, dass der Inhalt hinter dem Header verschwindet */
+    padding-bottom: 60px; /* Verhindert, dass der Inhalt hinter der fixierten Navigation verschwindet */
+}</style>
+<body>
+    <header>
+        <h1>Brawler Auswahl</h1>
+    </header>
+	<div class="dropdown">
+    <button class="dropbtn">Brawler auswählen</button>
+    <div class="dropdown-content">
+        <select id="brawlerSelect" onchange="showBrawlerInfo()">
+            <option value="">-- Brawler auswählen --</option>
+            <option value="shelly">Shelly</option>
+            <option value="colt">Colt</option>
+            <option value="bull">Bull</option>
+            <option value="brock">Brock</option>
+            <option value="barley">Barley</option>
+            <option value="nita">Nita</option>
+            <option value="rosa">Rosa</option>
+            <option value="poco">Poco</option>
+            <option value="primo">El Primo</option>
+            <option value="gus">Gus</option>
+            <option value="jacky">Jacky</option>
+            <!-- Füge hier die restlichen Brawler-Optionen hinzu -->
+        </select>
+    </div>
+</div>
+    <nav>
+        <button onclick="location.href='index.html'">Startseite</button>
+        <button onclick="location.href='modi.html'">Spielmodi</button>
+        <button onclick="location.href='test.html'">Esport</button>
+        <button onclick="location.href='https://supercell.com/`">Supercell</button>
+    </nav>
+    <main>
+        <label for="brawlerSelect">Wähle einen Brawler:</label>
+        <select id="brawlerSelect" onchange="showBrawlerInfo()">
+            <option value:"">-- Brawler auswählen --</option>
+            <option value:"shelly">Shelly</option>
+            <option value:"colt">Colt</option>
+            <option value:"bull">Bull</option>
+            <option value:"brock">Brock</option>
+            <option value:"barley">Barley</option>
+            <option value:"nita">Nita</option>
+            <option value:"rosa">Rosa</option>
+			<option value:"poco">Poco</option>
+			<option value:"primo">EL Primo</option>
+			<option value:"gus">Gus</option>
+			<option value:"jacky">Jacky</option>
+			<option value:"Achtbit">8-Bit</option>
+			<option value:"carl">Carl</option>
+			<option value:"tick">Tick</option>
+		    <option value:"penny">Penny</option>
+			<option value:"darryl">Darryl</option>
+			<option value:"dynamike">Dynamike</option>
+			<option value:"jessy">Jessy</option>
+			<option value:"rico">Rico</option>
+			<option value:"meeple">Meeple</option>
+			<option value:"shade">Shade</option>
+			<option value:"berry">Berry</option>
+			<option value:"angelo">Angelo</option>
+			<option value:"larryandlawrie">Larry und Lawrie</option>
+			<option value:"pearl">Pearl</option>
+			<option value:"hank">Hank</option>
+			<option value:"maisie">Maisie</option>
+			<option value:"mandy">Mandy</option>
+			<option value:"sam">Sam</option>
+			<option value:"bonnie">Bonnie</option>
+			<option value:"lola">Lola</option>
+			<option value:"ash">Ash</option>
+			<option value:"griff">Griff</option>
+			<option value:"grom">Grom</option>
+			<option value:"belle">Belle</option>
+			<option value:"stu">Stu</option>
+			<option value:"edgar">Edgar</option>
+			<option value:"colette">Colette</option>
+			<option value:"nani">Nani</option>
+			<option value:"gale">Gale</option>
+			<option value:"emz">Emz</option>
+			<option value:"bea">Bea</option>
+			<option value:"bibi">Bibi</option>
+			<option value:"frank">Frank</option>
+			<option value:"pam">Pam</option>
+			<option value:"piper">Piper</option>
+			<option value:"bo">Bo</option>
+			<option value:"finx">Finx</option>
+			<option value:"lumi">Lumi</option>
+			<option value:"ollie">Ollie</option>
+			<option value:"juju">Juju</option>
+			<option value:"moe">Moe</option>
+			<option value:"clancy">Clancy</option>
+			<option value:"lily">Lily</option>
+			<option value:"melodie">Melodie</option>
+			<option value:"mico">Mico</option>
+			<option value:"charlie">Charlie</option>
+			<option value:"chuck">Chuck</option>
+			<option value:"doug">Doug</option>
+			<option value:"willow">Willow</option>
+			<option value:"rt">R-T</option>
+			<option value:"gray">Gray</option>
+			<option value:"buster">Buster</option>
+			<option value:"otis">Otis</option>
+			<option value:"janet">Janet</option>
+			<option value:"eve">Eve</option>
+			<option value:"fang">Fang</option>
+			<option value:"buzz">Buzz</option>
+			<option value:"squeak">Squeak</option>
+			<option value:"ruffs">Ruffs</option>
+			<option value:"byron">Byron</option>
+			<option value:"lou">Lou</option>
+			<option value:"sprout">Sprout</option>
+			<option value:"max">Max</option>
+			<option value:"mrp">Mr. P</option>
+			<option value:"gene">Gene</option>
+			<option value:"tara">Tara</option>
+			<option value:"mortis">Mortis</option>
+			<option value:"kenji">Kenji</option>
+			<option value:"draco">Draco</option>
+			<option value:"kit">Kit</option>
+			<option value:"cordelius">Cordelius</option>
+			<option value:"chester">Chester</option>
+			<option value:"meg">Meg</option>
+			<option value:"Amber">Amber</option>
+			<option value:"surge">Surge</option>
+			<option value:"sandy">Sandy</option>
+			<option value:"leon">Leon</option>
+			<option value:"crow">Crow</option>
+			<option value:"spike">Spike</option>
+        </select>
+
+        <div id="brawlerInfo">
+            <p>Wähle einen Brawler aus dem Menü, um Infos zu sehen.</p>
+        </div>
+    </main>
+
+    <script>
+        function showBrawlerInfo() {
+            let brawler = document.getElementById("brawlerSelect").value;
+            let infoDiv = document.getElementById("brawlerInfo");
+
+            let brawlerData = {
+                shelly: { name: "Shelly", description: "<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>7400 <br><b>Schaden mit einer normalen Attacke:</b> 3000 <br><b>Schaden mit Super:</b> 3200 <br><b>Reichweite:</b>7,67"},
+                colt: { name: "Colt", description: "<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>5600<br><b>Schaden mit einer normalen Attacke:</b> 4320 <br><b> Schaden mit Super</b> 7680 <br><b>reichweite:</b> [9; 11]" },
+                bull: { name: "Bull", description: "<b>Klasse:</b> Tank <br><b>Leben:</b>10000<br><b>Schaden mit einer normalen Attacke:</b>4400<br><b>Schaden mit Super</b> 1920<br><b> Reichweite</b> [5,33; 11]" },
+                brock: { name: "Brock", description: "<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>4800 <br><b>Schaden mit einer normalen Attacke:</b> 2320<br><b>Schaden mit Super</b> 18720 <br><b> Reichweite</b> [9; 8,33]" },
+                barley: { name: "Barley", description: "<b>Klasse:</b> Artillerie <br><b>Leben:</b>4800 <br><b>Schaden mit einer normalen Attacke</b> 1600*3 <br><b>Schaden mit Super</b> 8000*3 <br><b> Reichweite</b> [7,33; 9,33]" },
+                nita: { name: "Nita", description: "<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>8000 <br><b>Schaden mit einer attacke:</b>1920 <br><b>Super:</b> Ein sich bewegender Bär mit 8000 leben und macht 800 schaden pro sec <br><b> Reichweite:</b> 6" },
+                rosa: { name: "Rosa", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>10000 <br><b>Schaden mit einer normalen Attacke:</b> 2760 <br><b>Super:</b> Macht einen Schild der 70% des Schadens abwährt <br><b>Reichweite:</b>3,67"},
+				poco: { name: "Poco", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>7400 <br><b>Schaden mit einer normalen Attacke:</b> 1520 <br><b> Super:</b> Super heilt sich und Verbündete um 4200 Leben  <br><b>Reichweite:</b>[7; 9,33]"},
+				primo: { name: "El Primo", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>12000 <br><b>Schaden mit einer normalen Attacke:</b> 3040 <br><b>Schaden mit Super:</b> 1920 <br><b>Reichweite:</b>[3;9]"},
+				gus: { name: "Gus", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>6400 <br><b>Schaden mit einer normalen Attacke:</b> 2000 ( heilt mit einem geist auch 1600 wenn er ihn einsammelt <br><b>Super:</b> Gibt sich selber oder einem anderen Verbündeten einen Schild von 5200 Trefferpunkten <br><b>Reichweite:</b>7,67"},
+				jacky: { name: "Jacky", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>10000 <br><b>Schaden mit einer normalen Attacke:</b> 2480 <br><b>Super:</b> Zieht Gegner an sich ran <br><b>Reichweite:</b>[3,33;5]"},
+				Achtbit: { name: ["8-Bit"], description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>10000 <br><b>Schaden mit einer normalen Attacke:</b> 6400 <br><b>Super:</b> [8-Bit] platziert einen Booster der den Schaden von ihm und seinen Kameraden in einem gewissen Bereich erhöht <br><b>Reichweite:</b>[10; 5]"},
+				carl: { name: "Carl", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>8000 <br><b>Schaden mit einer normalen Attacke:</b> 2960 <br><b>Schaden mit Super:</b> 12000 <br><b>Reichweite:</b>[8,33;2,33]"},
+				tick: { name: "Tick", description:"<b>Klasse:</b> Artillerie <br><b>Leben:</b>4400 <br><b>Schaden mit einer normalen Attacke:</b> 3840 <br><b>Schaden mit Super:</b> 4000 (Tick schmeißt seinen Kopf weg welcher dann 3200 Leben hat und dann explodiert wenn er Gegner berührt oder alle Leben verliert <br><b>Reichweite:</b>8,67"},
+				penny: { name: "Penny", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>6400 <br><b>Schaden mit einer normalen Attacke:</b> 1960 <br><b>Super:</b> Ein Mörser der alle 3,5s eine Kanonenkugel abfeuert die 2400 Schaden macht <br><b>Reichweite:</b>[8; 13,33]"},
+				darryl: { name: "Darryl", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>10600 <br><b>Schaden mit einer normalen Attacke:</b> 4800 <br><b>Schaden mit Super:</b> 800*2 (Darryl lädt seine Super über Zeit auf) <br><b>Reichweite:</b>[6;7]"},
+				dynamike: { name: "Dynamike", description:"<b>Klasse:</b> Artillerie <br><b>Leben:</b>5600 <br><b>Schaden mit einer normalen Attacke:</b> 3200 <br><b>Schaden mit Super:</b> 4400 <br><b>Reichweite:</b>7,33"},
+				jessy: { name: "Jessie", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>6000 <br><b>Schaden mit einer normalen Attacke:</b> 2120 <br><b>Super:</b> Jessie platziert ein Geschütz mit 6600 Leben welches 520 Schaden die sekunde macht<br><b>Reichweite:</b>9"},
+				rico: { name: "Rico", description: "<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>5600 <br><b>Schaden mit einer normalen Attacke:</b> 3200 <br><b>Schaden mit Super:</b> 8640 <br><b>Reichweite:</b>[9,67; 13,33]"},
+				meeple: { name: "Meeple", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>6000 <br><b>Schaden mit einer normalen Attacke:</b> 2600 <br><b>Super:</b> Meeple schmeißt einen Cheatcode auf Wände welcher ihm und seine Verbündeten erlaubt durch Wände zu schießen <br><b>Reichweite:</b>[7,67; 5]"},
+				shade: { name: "Shade", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>7000 <br><b>Schaden mit einer normalen Attacke:</b> 1600 bzw. 3200 <br><b>Super:</b> Shade geht in die Astral Welt und kann dadurch durch Wände gehen und wird schneller <br><b>Reichweite:</b>[3,67; 3,33]"},
+				berry: { name: "Berry", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>5000 <br><b>Schaden mit einer normalen Attacke:</b> 1320 und heilt Verbündete um 660 <br><b>Schaden und Heil mit Super:3040</b>  <br><b>Reichweite:</b>[6,33; 8,33]"},
+				angelo: { name: "Angelo", description:"<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>6000 <br><b>Schaden mit einer normalen Attacke:</b> min. 400 max. 4000 <br><b>Schaden mit Super:</b> 1000 pro sekunde <br><b>Reichweite:</b>[10; 2,33]"},
+				larryandlawrie: { name: "Larry und Lawrie", description:"<b>Klasse:</b> Artillerie <br><b>Leben:</b>5600 <br><b>Schaden mit einer normalen Attacke:</b> 2800 <br><b>Super:</b> Larry holt seinen Zwillingsbruder Lawrie dazu welcher eine Nahkampf Attacke hat welche bis zu 2400 Schaden verursacht( Lawrie hat 6000 Leben)   <br><b>Reichweite:</b>[7,33; 6,67]"},
+				pearl: { name:  "Pearl", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b> 7800 <br><b>Schaden mit einer normalen Attacke:</b> bis zu 5460 <br><b>Schaden mit Super:</b> bis zu 5424 <br><b>Reichweite:</b>[9;3,33]"},
+				hank: { name: "Hank", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>11200 <br><b>Schaden mit einer normalen Attacke:</b> min. 1050 max. 4200 <br><b>Schaden mit Super:</b> 15840 <br><b>Reichweite:</b>[3,33 bis 4,67;  20]"},
+				maisie: { name:"Maisie", description:"<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>7200 <br><b>Schaden mit einer normalen Attacke:</b> 3000 <br><b>Schaden mit Super:</b> 2480 und stößt Gegner weg <br><b>Reichweite:</b>[8,67 3,33]"},
+				mandy: { name:"Mandy", description:"<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>5600 <br><b>Schaden mit einer normalen Attacke:</b> 2600 <br><b>Schaden mit Super:</b> 5000 <br><b>Reichweite:</b>9 bzw. [12; 40]"},
+				sam: { name:"Sam", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>10800 <br><b>Schaden mit einer normalen Attacke:</b> 1600/800 <br><b>Schaden mit Super:</b> 2800/1400 gibt einen Geschwinigkeitsboost für kurze Zeit <br><b>Reichweite:</b>[3; 8,67]"},
+				bonnie: { name:"Bonnie", description:"<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>9600 <br><b>Schaden mit einer normalen Attacke:</b> 2240/3480 <br><b>Schaden mit Super:</b> 2000 <br><b>Reichweite:</b>[9; 5; 7,33]"},
+				lola: { name:"Lola", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>7600 <br><b>Schaden mit einer normalen Attacke:</b> 3360 <br><b>Super:</b> Sie lässt ihr Ego freien Lauf und dieser kopiert jeden ihrer Bewegungen( Ego hat 4000 Leben und verursacht den selben Schaden) <br><b>Reichweite:</b>9"},
+				ash: { name:"Ash", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>10800 <br><b>Schaden mit einer normalen Attacke:</b> bis zu 3200 <br><b>Schaden mit Super:</b> 3600(Er lässt 6 Ratten erscheinen welche jeweils 600 Schaden machen <br><b>Reichweite:</b>[4,67;unendlich]"},
+				griff: { name:"Griff", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>6800 <br><b>Schaden mit einer normalen Attacke:</b> 5040 <br><b>Schaden mit Super:</b> 7200 <br><b>Reichweite:</b>[8,33; 9]"},
+				grom: { name:"Grom", description:"<b>Klasse:</b> Artillerie <br><b>Leben:</b>5600 <br><b>Schaden mit einer normalen Attacke:</b> 2280 <br><b>Schaden mit Super:</b> 3200 <br><b>Reichweite:</b>[7,67; 8,33]"},
+				belle: { name:"Belle", description:"<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>5200 <br><b>Schaden mit einer normalen Attacke:</b> 2080 <br><b>Schaden mit Super:</b> 1000(Markiert Gegner wodurch diese mehr Schaden bekommen <br><b>Reichweite:</b>[10, 10,67]"},
+				stu: { name:"Stu", description: "<b>Klasse:</b> Assasine <br><b>Leben:</b>6400 <br><b>Schaden mit einer normalen Attacke:</b> 2160 <br><b>Schaden mit Super:</b> 1600 und dasht nach vorne <br><b>Reichweite:</b>7,67/2,33"},
+				edgar: { name:"Edgar", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>6600 <br><b>Schaden mit einer normalen Attacke:</b> 1080 und heilt sich um 378 <br><b>Super:</b> Edgar springt über Wände <br><b>Reichweite:</b>2/6,67"},
+				colette: { name:"Colette", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>6800 <br><b>Schaden mit einer normalen Attacke:</b> min. 1000 (macht mehr Schaden desto mehr Leben der Gegner hat) <br><b>Schaden mit Super:</b> 1000*2 <br><b>Reichweite:</b>8,67/11"},
+				nani: { name:"Nani", description:"<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>4800 <br><b>Schaden mit einer normalen Attacke:</b> 4440 <br><b>Schaden mit Super:</b> 3600 <br><b>Reichweite:</b>11,67/3,33"},
+				gale: { name:"Gale", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>7600 <br><b>Schaden mit einer normalen Attacke:</b> 3360 <br><b>Schaden mit Super:</b> 1200 <br><b>Reichweite:</b>8,33/10"},
+				emz: { name:"Emz", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>7200 <br><b>Schaden mit einer normalen Attacke:</b> 1040 pro tick <br><b>Schaden mit Super:</b> 480 und verlangsamt Gegner <br><b>Reichweite:</b>6,67/5,67"},
+				bea: { name:"Bea", description:"<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>5000 <br><b>Schaden mit einer normalen Attacke:</b> 1600/4400 <br><b>Schaden mit Super:</b> 1400(getroffene Gegner werden verlangsamt) <br><b>Reichweite:</b>10/9"},
+				bibi: { name:"Bibi", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>9600 <br><b>Schaden mit einer normalen Attacke:</b> 2800 <br><b>Schaden mit Super:</b> 1800 <br><b>Reichweite:</b>3,67/40"},
+				frank: { name:"Frank", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>13400 <br><b>Schaden mit einer normalen Attacke:</b> 2320 <br><b>Schaden mit Super:</b> 2480 und macht Gegner unbeweglich <br><b>Reichweite:</b>6/7"},
+				pam: { name:"Pam", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>9600 <br><b>Schaden mit einer normalen Attacke:</b> 4680 <br><b>Heilung mit Super:</b> 960 pro Sekunde im Bereich um den Turm  <br><b>Reichweite:</b>9/5"},
+				piper: { name:"Piper", description:"<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>4600 <br><b>Schaden mit einer normalen Attacke:</b> min. 680 max. 3400 <br><b>Schaden mit Super:</b> 7200 <br><b>Reichweite:</b>10/8,67"},
+				bo: { name:"Bo", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>7200 <br><b>Schaden mit einer normalen Attacke:</b> 3840 <br><b>Schaden mit Super:</b> 8640 <br><b>Reichweite:</b>8,67"},
+				finx:  { name:"Finx", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>7200 <br><b>Schaden mit einer normalen Attacke:</b> 2700 <br><b> Super:</b> verlangsamt gegnerische Schüsse und verschnellert die des eigenen Teams <br><b>Reichweite:</b>8,33/7,33"},
+				lumi: { name:"Lumi", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b> nix offiziel bekannt"},
+				ollie:  { name:"ollie", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>11200 <br><b>Schaden mit einer normalen Attacke:</b> 2000 <br><b>Schaden mit Super:</b> 1600 und hypnose des Gegners <br><b>Reichweite:</b>6,33/5,67"},
+				juju:  { name:"Juju", description:"<b>Klasse:</b> Artillerie <br><b>Leben:</b>6000 <br><b>Schaden mit einer normalen Attacke:</b> 2000 oder 1600 <br><b>Super:</b>Juju beschwört eine Voodoo Puppe welche 7200 Leben hat und 1600 Schaden pro Attacke macht  <br><b>Reichweite:</b>6,33 bzw 9/5"},
+				moe: { name:"Moe", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>6800 <br><b>Schaden mit einer normalen Attacke:</b> 4000/5600 die Sekunde <br><b>Schaden mit Super:</b> 1200  <br><b>Reichweite:</b>7,67/7,33"},
+				clancy: { name:"Clancy", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>6600 <br><b>Schaden mit einer normalen Attacke:</b> bis zu 1600*4 <br><b>Schaden mit Super:</b> bis zu 22400 <br><b>Reichweite:</b>7,67/5,67 bis 8,33"},
+				lily: { name:"Lily", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>8200 <br><b>Schaden mit einer normalen Attacke:</b> 2120 <br><b>Schaden mit Super:</b> 1000 und teleportiert sich zum getroffenen Gegner <br><b>Reichweite:</b>2/9"},
+				melodie: { name:"Melodie", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>7200 <br><b>Schaden mit einer normalen Attacke:</b> 920 bzw mit einer Note 1840 <br><b>Super:</b> Melodie dasht bis zu 3 mal <br><b>Reichweite:</b>8 bzw eine Note 3,33/5,33"},
+				mico: { name:"Mico", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>6600 <br><b>Schaden mit einer normalen Attacke:</b> 2180 (springt über Wände) <br><b>Schaden mit Super:</b> 2380 <br><b>Reichweite:</b>4"},
+				charlie: { name:"Charlie", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>7000 <br><b>Schaden mit einer normalen Attacke:</b> 1600 <br><b>Super:</b> ein Gegner wird in einen Cocoon geschlossen und dadurch unbweglich gemacht <br><b>Reichweite:</b>8,33/9"},
+				chuck: { name:"Chuck", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>9000 <br><b>Schaden mit einer normalen Attacke:</b> 1080 <br><b>Schaden mit Super:</b> 800 bzw 3500 <br><b>Reichweite:</b>6,67/10"},
+				doug: { name:"Doug", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>10000 <br><b>Schaden mit einer normalen Attacke:</b> 2400 heilt 1200 <br><b> Super:</b>Er gibtg entweder sich oder seinem verbündeten einen Hotdog wodurch er kurze Zeit die möglichket hat sich wiederzubeleben <br><b>Reichweite:</b>3,33/9,33"},
+				willow: { name:"Willow", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>5600 <br><b>Schaden mit einer normalen Attacke:</b> 2400 <br><b>Super:</b> Sie übernimmt den gegnerischen Verstand <br><b>Reichweite:</b>7,33/8,33"},
+				rt: { name:["R-T"], description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>7800 <br><b>Schaden mit einer normalen Attacke:</b> 1400 und markiert Gegner wodurch sie mehr Schaden bekommen, dann macht er 2480 Schaden/ 2480(ohne Markierung) ca. 3500 (mit Markierung) <br><b>Super:</b> R-T teilt sich in 2 Teile während er nur den oberen Teil kontrolliert <br><b>Reichweite:</b>10/3,33"},
+				gray: { name:"Gray", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>6600 <br><b>Schaden mit einer normalen Attacke:</b> 2320 <br><b> Super:</b> Gray Teleportiert sich und seine Verbündeten sofort in einer gewissen Reichweite  <br><b>Reichweite:</b>9/6,67"},
+				buster: { name:"Buster", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>10000 <br><b>Schaden mit einer normalen Attacke:</b> 2760 <br><b>Super:</b> Buster macht einen Schild der Angriffe auf die Gegner zurück schießt <br><b>Reichweite:</b>5,33/3"},
+				otis: { name:"Otis", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>6400 <br><b>Schaden mit einer normalen Attacke:</b> 2760 <br><b>Schaden mit Super:</b> 2040 und Gegner kann 3s nicht angreifen <br><b>Reichweite:</b>9"},
+				janet: { name:"Janet", description:"<b>Klasse:</b> Scharfschütze <br><b>Leben:</b>6400 <br><b>Schaden mit einer normalen Attacke:</b> 2000 <br><b>Schaden mit Super:</b> bis zu 11200 <br><b>Reichweite:</b>4 bis 8,33/ 2,67"},
+				eve: { name:"Eve", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>5800 <br><b>Schaden mit einer normalen Attacke:</b> 3120 <br><b>Schaden mit Super:</b> 1600*4 <br><b>Reichweite:</b>9,33/5"},
+				fang: { name:"Fang", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>8600 <br><b>Schaden mit einer normalen Attacke:</b> 2720 bzw 680 <br><b>Schaden mit Super:</b> 2400(bis zu gegen 4 Gegner <br><b>Reichweite:</b>9,33/10"},
+				buzz: { name:"Buzz", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>9600 <br><b>Schaden mit einer normalen Attacke:</b> 4200 <br><b>Super:</b> buzz zieht sich an die Gegner oder an Wände und wenn er gegen prallt werden Gegner unbeweglich gemacht <br><b>Reichweite:</b>2,67/10"},
+				squeak: { name:"Squeak", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>7200 <br><b>Schaden mit einer normalen Attacke:</b> 2320 <br><b>Schaden mit Super:</b> bis zu 12000 <br><b>Reichweite:</b>7,67/8,33"},
+				ruffs: { name:"Ruffs", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>5600 <br><b>Schaden mit einer normalen Attacke:</b> 2400 <br><b>Schaden mit Super:</b> 2000 und lässt ein Upgrade für sein Team liegen <br><b>Reichweite:</b>9/7,67"},
+				byron: { name:"Byron", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>4800 <br><b>Schaden mit einer normalen Attacke:</b> 760*3 oder heilt einen Verbündeten  <br><b>Schaden mit Super:</b> 3000 kann auch heilen <br><b>Reichweite:</b>10/7,33"},
+				lou: { name:"Lou", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>6400 <br><b>Schaden mit einer normalen Attacke:</b> 2640 und friert Gegner zu wodurch sie nach 3 Attacken unbeweglich sind <br><b>Schaden mit Super:</b> 80 pro Sekunde aber lässt Gegner im Bereich einfrieren <br><b>Reichweite:</b>9,33/7,67"},
+				sprout: { name:"Sprout", description:"<b>Klasse:</b> Artillerie <br><b>Leben:</b>6000 <br><b>Schaden mit einer normalen Attacke:</b> 2080 <br><b>Super:</b> Sprout platziert eine Wand <br><b>Reichweite:</b>8,33/7,67"},
+				max: { name:"Max", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>6600 <br><b>Schaden mit einer normalen Attacke:</b> 2560 <br><b>Super:</b> Verbündete in einem gewissen Bereich werden schneller <br><b>Reichweite:</b>8,33/4"},
+				mrp: { name:"[Mr. P]", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>6800 <br><b>Schaden mit einer normalen Attacke:</b> 3040 <br><b>Super:</b> Mr. P errichtet eine Station(5000 leben) welche dann Porter ercheinen lässt die 520 Schaden machen und 2800 Leben haben <br><b>Reichweite:</b>10,33/5"},
+				gene: { name:"Gene", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>7200 <br><b>Schaden mit einer normalen Attacke:</b> 2000 bzw 332 <br><b> Super:</b> zieht Gegner zu sich <br><b>Reichweite:</b>11,33/7,67"},
+				tara: { name:"Tara", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>6200 <br><b>Schaden mit einer normalen Attacke:</b> 2880 <br><b>Schaden mit Super:</b> 1600 <br><b>Reichweite:</b>8/6,67"},
+				mortis: { name:"Mortis", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>7600 <br><b>Schaden mit einer normalen Attacke:</b> 2000 <br><b>Schaden mit Super:</b> 1800 heilt um 2250 Leben <br><b>Reichweite:</b>2,67 bzw. 4,67/10"},
+				kenji: { name:"Kenji", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>7600 <br><b>Schaden mit einer normalen Attacke:</b> 1500 oder 2000 <br><b>Schaden mit Super:</b> 5200 <br><b>Reichweite:</b>2,67 oder 3,67/7,33"},
+				draco: { name:"Draco", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>11000 <br><b>Schaden mit einer normalen Attacke:</b> bis zu2800 <br><b>Super:</b> Sein Drache kommt dazu und verstreut Flammen (insgesamt 6400 Schaden sind möglich) <br><b>Reichweite:</b>4/5,67"},
+				kit: { name:"Kit", description:"<b>Klasse:</b> Unterstützer <br><b>Leben:</b>6000 <br><b>Schaden mit einer normalen Attacke:</b> 2000/3200 <br><b> Super:</b>Kit springt entweder auf seinen Gegner und verursacht dann 3000 Schaden oder springt auf seinen Verbündeten und heilt ihn während er nun explodierende Wollkneul schmeißt  <br><b>Reichweite:</b>3,67/7,33/6,67"},
+				cordelius: { name:"Cordelius", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>6400 <br><b>Schaden mit einer normalen Attacke:</b> 2800 <br><b>Super:</b> Cordelius holt sich und seinen Gegner in eine andere Dimension <br><b>Reichweite:</b>5,33/9"},
+				chester: { name:"Chester", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>7000 <br><b>Schaden mit einer normalen Attacke:</b> bis zu 5120 <br><b>Super</b> Chester hat 5 unterschiedliche Super <br><b>Reichweite:</b>8,33/6,33"},
+				meg: { name:"Meg", description:"<b>Klasse:</b> Tank <br><b>Leben:</b>4600/7000 <br><b>Schaden mit einer normalen Attacke:</b> 1200/4800 <br><b>Schaden mit Super:</b> 3400 bzw wird wieder zum Mecha <br><b>Reichweite:</b>9 bzw. 7,33/4,33"},
+				amber: { name:"Amber", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>6400 <br><b>Schaden mit einer normalen Attacke:</b> 420 <br><b>Schaden mit Super:</b> 960 pro sekunde <br><b>Reichweite:</b>8,33/7,33"},
+				surge: { name:"Surge", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>6000 <br><b>Schaden mit einer normalen Attacke:</b> 2360 bzw. 1180 <br><b>Schaden mit Super:</b> 2000 (wird nach einmal schneller, nach 2 bekommt er größere Reichweite und nach 3. Super wird die Attacke nach aufprall mehr aufgeteilt <br><b>Reichweite:</b>6,67 bzw. 8,67/3,33"},
+				sandy: { name:"Sandy", description:"<b>Klasse:</b> Kontrolle <br><b>Leben:</b>7600 <br><b>Schaden mit einer normalen Attacke:</b> 1800 <br><b>Super:</b> Sandy lässt einen Sandsturm erscheinen wodurch sein ganzes Team im Sandsturm unsichtbar wird <br><b>Reichweite:</b>6/7,33"},
+				leon: { name:"Leon", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>6800 <br><b>Schaden mit einer normalen Attacke:</b> 3840 <br><b>Super:</b> Leon schmeißt eine Rauchbombe welche ihn unsichtbar macht bis er entweder angreift oder nach 6s wird er wieder sichtbar <br><b>Reichweite:</b>9,67"},
+				crow: { name:"Crow", description:"<b>Klasse:</b> Assasine <br><b>Leben:</b>4800 <br><b>Schaden mit einer normalen Attacke:</b> 2720 <br><b>Schaden mit Super:</b> bis zu 18720 <br><b>Reichweite:</b>8,67"},
+				spike: { name:"Spike", description:"<b>Klasse:</b> Damage-Dealer <br><b>Leben:</b>5600 <br><b>Schaden mit einer normalen Attacke:</b> 7560 <br><b>Schaden mit Super:</b> 3200 und verlangsamt Gegner <br><b>Reichweite:</b>7,67"},
+            }; 
+
+            if (brawlerData[brawler]) {
+                infoDiv.innerHTML = `$ {brawlerData[brawler].name}: $ {brawlerData[brawler].description}`;
+            } else {
+                infoDiv.innerHTML = "<p>Wähle einen Brawler aus dem Menü, um Infos zu sehen.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
